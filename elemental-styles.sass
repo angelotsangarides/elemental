@@ -1,0 +1,123 @@
+@import elemental-config
+
+html, body
+    width: 100%
+    height: 100%
+    overflow: hidden
+    font-family: 'Lato', sans-serif
+    padding: 0
+    margin: 0
+
+body
+    padding: 70px
+
+.elmntl-card
+    position: relative
+    width: 230px
+    height: 350px
+    overflow: hidden
+    padding: 0
+    margin: 0
+    float: left
+
+    .description
+        position: absolute
+        width: 100%
+        height: 60px
+        margin-top: 350px
+        transition: all 0.1s
+        background-color: rgba(nth($card-desc-colour, 1), nth($card-desc-colour, 2), nth($card-desc-colour, 3), $card-desc-opacity)
+
+        h4
+            color: #000000
+            margin-left: 10px
+
+    .thumbnail
+        position: absolute
+        width: 100%
+        height: 100%
+        background: url('img.jpeg')
+        background-size: cover
+
+    &:hover
+        .description
+            margin-top: 350px - 60px
+
+.elmntl-card-alt
+    position: relative
+    width: 230px
+    height: 350px
+    overflow: hidden
+    padding: 0
+    margin: 0 0 0 7px
+    float: left
+
+    .description
+        position: absolute
+        width: 100%
+        height: 60px
+        margin-top: 350px
+        transition: all 0.1s
+        background-color: rgba(nth($card-desc-colour, 1), nth($card-desc-colour, 2), nth($card-desc-colour, 3), 1)
+
+        h4
+            color: #000000
+            margin-left: 10px
+
+    .thumbnail
+        position: absolute
+        width: 100%
+        height: 100%
+        background: url('img2.jpeg')
+        background-size: cover
+        transition: all 0.1s
+        margin: 0
+        bottom: 0
+
+    &:hover
+        .thumbnail
+            margin-bottom: 60px
+
+        .description
+            margin-top: 350px - 60px
+
+.uielements
+    position: relative
+    padding: 0
+    margin: 0 0 0 20px
+    float: left
+
+.elmntl-button
+    position: absolute
+    z-index: 0
+    padding: $button-padding-tb $button-padding-lr $button-padding-tb $button-padding-lr
+    background-color: $button-default-colour
+    transition: all 0.1s
+    box-shadow: 0px 7px 0px 0 darken($button-default-colour, $button-default-darken)
+    border: none
+    font-weight: 700
+    appearance: none
+    outline: none
+
+    &:hover
+        margin: 5px 0 5px 0
+        box-shadow: 0px 2px 0px 0 darken($button-default-colour, $button-default-darken)
+
+    &:active
+        transition: all 0s
+        background-color: darken($button-default-colour, $button-default-darken)
+        box-shadow: 0px 2px 0px 0 darken($button-default-colour, $button-default-darken + 3%)
+
+.elmntl-textbox
+    margin-top: 50px
+    appearance: none
+    border-radius: $textbox-border-radius
+    border: 2px solid $textbox-border-color
+    transition: all 0.5s
+    width: $textbox-width
+    height: $textbox-height
+    padding: $textbox-padding
+
+    &:focus
+        outline: none
+        border: 2px solid $textbox-focused-border-color
